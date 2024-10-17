@@ -4,6 +4,7 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
+
 .container {
   width: 100%;
   height: 100vh;
@@ -12,11 +13,11 @@
   justify-content: center;
   align-items: center;
 }
+
 .todo-app {
   margin: 20px;
   background: #fff;
   width: 400px;
-  height: auto;
   padding: 40px 30px 70px;
   border-radius: 10px;
   display: flex;
@@ -24,43 +25,38 @@
   justify-content: center;
   align-items: center;
 }
+
 .todo-app h2 {
   color: #002765;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
+
 .todo-app h2 img {
   width: 30px;
   margin-left: 10px;
 }
+
 .row {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   background: #edeef0;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 20px;
-  margin-bottom: 25px;
-  justify-content: center;
-}
-input[type="text"] {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
-}
-input[type="date"], select {
-  padding: 10px;
-  background: transparent;
-  border: none;
+  margin-bottom: 20px;
 }
 
-#due-date{
-  width: 104.5%;
+input[type="text"], input[type="date"], select {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+  border-color: #007bff;
 }
 
 button {
@@ -74,52 +70,46 @@ button {
   border-radius: 40px;
 }
 
+button:hover {
+  background: #8e1507;
+}
+
 .filter-buttons {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
+ul {
+  width: 100%;
+}
+
 ul li {
-  list-style:circle;
+  list-style: none;
   font-size: 14px;
-  line-height: 20px;
-  padding: 12px 8px 12px 10px;
+  padding: 12px;
+  background: #f4f4f4;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   user-select: none;
   cursor: pointer;
   position: relative;
 }
-ul li::before {
-  content: '';
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-image: url(unchecked.png);
-  background-size: cover;
-  background-position: center;
-  top: 12px;
-  left: 8px;
-}
+
 ul li.checked {
   color: #555;
   text-decoration: line-through;
 }
-ul li.checked::before {
-  background-image: url(checked.png);
-}
+
 ul li span {
-  position: absolute;
-  left: 95%;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-  color: #555;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 50%;
+  color: #ff0000;
+  font-size: 20px;
+  cursor: pointer;
 }
-ul li span:hover {
-  background: #edeef0;
+
+#error-message {
+  margin-bottom: 10px;
 }

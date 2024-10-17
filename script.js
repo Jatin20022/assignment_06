@@ -1,31 +1,39 @@
 const inputBox = document.getElementById("text-input");
 const listContainer = document.getElementById("list-container");
+const dueDateInput = document.getElementById("due-date");
+const categoryInput = document.getElementById("category");
+const priorityInput = document.getElementById("priority");
+const errorMessage = document.getElementById("error-message");
 
 function addTask() {
-  if (inputBox.value === '') {
-    alert("You must write something");
+  // Validate input fields
+  if (inputBox.value === '' || dueDateInput.value === '') {
+    errorMessage.style.display = 'block';
+    return;
   } else {
-    let li = document.createElement('li');
-
-    // Get due date, category, and priority
-    let dueDate = document.getElementById('due-date').value;
-    let category = document.getElementById('category').value;
-    let priority = document.getElementById('priority').value;
-
-    // Construct task with details
-    li.innerHTML = `${inputBox.value} - Due: ${dueDate} - Category: ${category} - Priority: ${priority}`;
-    listContainer.appendChild(li);
-
-    let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    li.appendChild(span);
+    errorMessage.style.display = 'none';
   }
+
+  let li = document.createElement('li');
+
+  // Get due date, category, and priority
+  let dueDate = dueDateInput.value;
+  let category = categoryInput.value;
+  let priority = priorityInput.value;
+
+  // Construct task with details
+  li.innerHTML = `${inputBox.value} - Due: ${dueDate} - Category: ${category} - Priority: ${priority}`;
+  listContainer.appendChild(li);
+
+  let span = document.createElement("span");
+  span.innerHTML = "\u00d7";
+  li.appendChild(span);
 
   // Reset the input fields
   inputBox.value = '';
-  document.getElementById('due-date').value = '';
-  document.getElementById('category').value = 'work';
-  document.getElementById('priority').value = 'medium';
+  dueDateInput.value = '';
+  categoryInput.value = 'work';
+  priorityInput.value = 'medium';
 
   savedata();
 }

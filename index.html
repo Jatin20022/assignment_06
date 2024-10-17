@@ -13,7 +13,7 @@
       
       <div class="row">
         <input type="text" id="text-input" placeholder="Add your task">
-        <input type="date" id="due-date" placeholder="dd-mm-yyyy">
+        <input type="date" id="due-date">
         <select id="category">
           <option value="work">Work</option>
           <option value="personal">Personal</option>
@@ -27,15 +27,15 @@
         <button id="add" onclick="addTask()">Add</button>
       </div>
 
+      <p id="error-message" style="color: red; display: none;">Please fill in all the fields.</p>
+
       <div class="filter-buttons">
         <button onclick="filterTasks('all')">All</button>
         <button onclick="filterTasks('completed')">Completed</button>
         <button onclick="filterTasks('pending')">Pending</button>
       </div>
 
-      <ul id="list-container">
-        
-      </ul>
+      <ul id="list-container"></ul>
     </div>
   </div>
   
