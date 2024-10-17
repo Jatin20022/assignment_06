@@ -54,11 +54,15 @@ input[type="text"] {
   font-weight: 14px;
 }
 input[type="date"], select {
-  margin-right: 10px;
   padding: 10px;
   background: transparent;
   border: none;
 }
+
+#due-date{
+  width: 104.5%;
+}
+
 button {
   border: none;
   outline: none;
